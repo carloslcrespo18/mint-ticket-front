@@ -40,7 +40,7 @@ export const Mint = ({ account }) => {
 		const commissions = commissionsWallets.map((comm, index) => {
 			return [
 				commissionsWallets[index],
-				Number(commissionsAmount[index].toFixed(2)) * 100,
+				parseInt(Number(commissionsAmount[index].toFixed(2)) * 100),
 			];
 		});
 		const imageIpfsHash = await pinFileToIPFS({ file: image });

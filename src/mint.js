@@ -28,7 +28,7 @@ export const Mint = ({ account }) => {
 		setCommissionsWallets(newCommWallets);
 		const newcommAmounts = [
 			...commissionsAmount,
-			parseInt(amountComm) >>> 0,
+			Number(amountComm),
 		];
 		setCommissionsAmount(newcommAmounts);
 		setWalletComm("");
@@ -40,7 +40,7 @@ export const Mint = ({ account }) => {
 		const commissions = commissionsWallets.map((comm, index) => {
 			return [
 				commissionsWallets[index],
-				parseInt(Number(commissionsAmount[index]).toFixed(2)) * 100,
+				Number(commissionsAmount[index].toFixed(2)) * 100,
 			];
 		});
 		const imageIpfsHash = await pinFileToIPFS({ file: image });
